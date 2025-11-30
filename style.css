@@ -1,0 +1,288 @@
+/* style.css - Updated Spacing & Fonts */
+
+:root{
+  --navy: #0d1b2a;
+  --muted-navy: #1c294d;
+  --gold: #e3b043;
+  --muted-gray: #6c7685;
+  --soft-bg: #f8f7f4;
+  --card-bg: #ffffff;
+  --shadow: rgba(0,0,0,0.06);
+  --radius-lg: 14px;
+  --max-width: 1100px;
+}
+
+/* Global reset + base */
+* { box-sizing: border-box; }
+html,body { height:100%; }
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  color: var(--navy);
+  background: var(--soft-bg);
+  padding-top: 80px; /* Space for fixed navbar */
+  line-height: 1.6;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 22px 80px;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #e8e6df;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  color: var(--muted-navy);
+  font-weight: 700;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display:flex;
+  gap: 36px;
+}
+
+.nav-links a {
+  color: var(--muted-navy);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+/* ---------- HERO SECTION (HOME) ---------- */
+.hero {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 60px 24px 40px;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.welcome {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.name {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(40px, 8vw, 72px);
+    line-height: 1.1;
+    color: var(--navy);
+    margin: 0 0 24px 0;
+}
+
+.role {
+    font-size: 20px;
+    color: var(--muted-navy);
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.desc {
+    font-size: 16px;
+    color: var(--muted-gray);
+    max-width: 600px;
+    margin-bottom: 32px;
+}
+
+/* Buttons */
+.buttons { display: flex; gap: 16px; margin-bottom: 40px; }
+
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.btn.primary {
+    background-color: var(--navy);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(13, 27, 42, 0.2);
+}
+.btn.primary:hover { background-color: var(--muted-navy); transform: translateY(-2px); }
+
+.btn.outline {
+    background-color: transparent;
+    border: 2px solid var(--navy);
+    color: var(--navy);
+}
+.btn.outline:hover { background-color: var(--navy); color: #fff; }
+
+/* Icons */
+.icons { display: flex; gap: 24px; align-items: center; }
+.icons i { font-size: 24px; color: var(--navy); transition: 0.3s; cursor: pointer; }
+.icons i:hover { color: var(--gold); transform: scale(1.1); }
+
+/* ---------- STATS SECTION (Home Bottom) ---------- */
+.stats {
+    max-width: var(--max-width);
+    margin: 20px auto 120px; 
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.stat-card {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.02);
+    transition: transform 0.3s;
+}
+.stat-card:hover { transform: translateY(-5px); }
+
+.stat-title { font-size: 28px; margin: 0 0 8px 0; font-family: "Playfair Display", serif; }
+.stat-title.gold { color: var(--gold); }
+.stat-sub { font-weight: 700; color: var(--navy); margin: 0 0 4px 0; }
+.stat-desc { font-size: 14px; color: var(--muted-gray); margin: 0; }
+
+/* ---------- RESUME / BIO PAGES STYLING ---------- */
+.page-header { 
+    max-width: var(--max-width); 
+    margin: 36px auto 0; /* Reduced bottom margin */
+    padding: 24px 18px 4px; /* Reduced bottom padding */
+}
+
+.page-title { 
+    font-family: "Playfair Display", serif; 
+    /* Font size now matches Home Page */
+    font-size: clamp(40px, 8vw, 72px); 
+    line-height: 1.1;
+    font-weight: 700;
+    color: var(--navy); 
+    margin: 0 0 16px 0; 
+}
+
+.page-subtitle { color: var(--muted-gray); font-size: 18px; margin: 0; }
+
+.section { 
+    max-width: var(--max-width); 
+    margin: 4px auto; /* Tighter margin between sections */
+    padding: 10px 18px 24px; /* Tighter padding inside sections */
+}
+
+.section-title { 
+    font-family: "Playfair Display", serif; 
+    font-size: 28px; 
+    color: var(--navy); 
+    margin-bottom: 20px; 
+    display:flex; 
+    align-items:center; 
+    gap:12px; 
+}
+.section-title .icon { color: var(--gold); font-size: 22px; }
+
+/* Resume Cards Layout */
+.card {
+  background: var(--card-bg);
+  padding: 24px 28px; 
+  border-radius: var(--radius-lg);
+  box-shadow: 0 6px 18px var(--shadow);
+  border: 1px solid rgba(10,10,10,0.03);
+  margin-bottom: 24px;
+}
+
+/* Card Header: Flexbox for Title and Date Tag */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.job-title {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0;
+}
+
+.tag {
+  background: rgba(227,176,67,0.15); 
+  color: #8a6200;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.company {
+  color: var(--muted-gray);
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+
+.description { margin-bottom: 20px; color: #444b57; }
+.subheading { margin-top: 20px; font-weight: 700; color: var(--navy); font-size: 16px; margin-bottom: 12px; }
+
+.list { margin: 0; padding-left: 20px; color: #444b57; }
+.list li { margin-bottom: 8px; }
+
+/* Education Layout */
+.small-card { padding: 20px 24px; }
+.edu-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.edu-title { font-weight: 700; color: var(--navy); margin: 0; font-size: 16px; }
+.edu-sub { color: var(--muted-gray); margin: 0; font-size: 14px; }
+
+/* Training & Skills Grids */
+.training-grid, .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.training-title { font-weight: 600; color: var(--navy); margin: 0; }
+.skill-title { font-size: 16px; font-weight: 700; margin-bottom: 12px; color: var(--navy); }
+
+/* Skill chips */
+.chips span {
+  display: inline-block;
+  background: #f1f1f1;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin: 4px 6px 6px 0;
+  color: #4b5563;
+  font-size: 13px;
+}
+
+.full-width { grid-column: 1 / -1; }
+
+/* Mobile */
+@media (max-width: 768px) {
+    .navbar { padding: 18px 20px; }
+    .hero { text-align: center; }
+    .stats, .skills-grid, .training-grid { grid-template-columns: 1fr; }
+    .buttons, .icons { justify-content: center; }
+    .nav-links { gap: 20px; }
+    .page-title { font-size: 32px; }
+    .card-header { flex-direction: column; gap: 8px; }
+}
